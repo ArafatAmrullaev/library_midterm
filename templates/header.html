@@ -1,3 +1,10 @@
 <h2>Library Logo</h2>
+{% if request.user.is_authenticated %}
 <a href="{% url 'add-book' %}">Add New Book</a>
-</br>
+<a href="{% url 'add-author' %}">Add New Author</a>
+<a href="{% url 'add-publisher' %}">Add New Publisher</a>
+<a href="{% url 'logoutUser' %}">Logout</a>
+{% else %}
+<a href="{% url 'loginUser' %}">Login</a>
+{% endif %}
+<hr>

@@ -7,6 +7,7 @@ class BooksModel(models.Model):
     author = models.ForeignKey('AuthorModel', on_delete=models.CASCADE)
     publisher = models.ForeignKey('PublisherModel', on_delete=models.CASCADE)
     public_date = models.DateField(auto_now_add=True)
+    cover = models.ImageField(upload_to='covers' ,null=True, blank=True)
 
     def __str__(self) -> str:
         return self.title
